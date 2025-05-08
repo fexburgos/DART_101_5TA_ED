@@ -24,4 +24,21 @@ final preciofixed = precio.toStringAsFixed(3);
 final preciofinal = double.parse(preciofixed);
 print (preciofinal);
 
+
+
+List<double> precios = [1.25, 3.25, 1, 3, 2];
+print (precios);
+
+
+List<dynamic> lista1 = [1, 2.5, "sol", "luna", true, "mar"];
+print (lista1);
+
+lista1.add("casa");
+print(lista1);
+
+print(lista1[3]);
+
+print(lista1.last);
+
+
  }
