@@ -16,6 +16,8 @@ void main (){
   String frase = "$name $nombre $age $edad";
   print (frase);
 
+print("Mi nombre es $nombre y tengo $edad años.");
+
 
 double prueba = 10.1;
 
