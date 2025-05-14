@@ -14,11 +14,26 @@ void main () {
   final (division) = valor1 / valor2;
   print(division);
 
+final valor3= 20;
+final porcentaje = 50;
+final resultado = valor3 *porcentaje/100;
+print (resultado); 
 
 
+final a = false;
+final b = true;
 
+/// AND && sólo true && true es verdadero, resto falso
+final valor = a && b;
+print (valor);
 
+/// OR || sólo false OR false es falso, resto verdadero
+final valorOr = a || b;
+print (valorOr);
 
+/// NOT
+final valorNot = !a;
+print (valorNot);
 
 
 }
