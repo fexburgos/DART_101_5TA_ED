@@ -1,39 +1,109 @@
+/*
+  /// Producto que cuesta 30 dólares
+  /// IVA que vale 15%
+  /// Sumar ese valor del iva al producto y obtener el precio final
+  final producto = 30;
+  final impuesto = 15;
+  final valorImpuesto = producto * (impuesto / 100);
+  final valorTotal = producto + valorImpuesto;
+  print("El producto va a costar: \$$valorTotal USD");
+
+  /// Producto que cuesta 10 dólares
+  /// FODIMA que vale 0.5%
+  /// Sumar ese valor del iva al producto y obtener el precio final
+  final producto2 = 10;
+  final impuesto2 = 0.5;
+  final valorImpuesto2 = producto2 * (impuesto2 / 100);
+  final valorTotal2 = producto2 + valorImpuesto2;
+  print("El producto va a costar: \$$valorTotal2 USD");
+
+  // Test de tipos
+  if(impuesto is String) {
+    print("El valor impuesto es un String");
+    return;
+  }
+  */
+
 void main() {
-  // Cuerpo de la función
-  // void
-  saludar();
-  // return int
-  final suma = sumar();
-  print(suma);
-  // opcion 2
-  print(sumar());
-  // opcion 3
-  print("El valor de la suma es: ${sumar()}");
+  /// Como se ejecutan las funciones?
+  calculoIva();
+  calculoFodima();
+  calcularImpuestoPosicionales(30, 15, "Calculo de iva");
+  calcularImpuestoNombre(producto: 10, impuesto: 0.5, mensaje: "fodima");
+  final calculo = calculoImpuestoFinal(producto: 20, impuesto: 5);
+  print("El valor calculado es: $calculo");
+  print("El calculo 2 es: ${calculoImpuestoFinal(producto: 20, impuesto: 5)}");
 }
 
-// void -> saludar -> imprimir Hola Mundo
-void saludar() {
-  print("Hola Mundo");
+void calculoIva() {
+  /// Producto que cuesta 30 dólares
+  /// IVA que vale 15%
+  /// Sumar ese valor del iva al producto y obtener el precio final
+  final producto = 30;
+  final impuesto = 15;
+  final valorImpuesto = producto * (impuesto / 100);
+  final valorTotal = producto + valorImpuesto;
+  print("El producto va a costar: \$$valorTotal USD FUNCION");
 }
 
-// retornar un entero de la suma de 2 números 2+2
-int sumar() {
-  final suma = 2 + 2;
-  // palabra reservada que se llama return
+void calculoFodima() {
+  /// Producto que cuesta 10 dólares
+  /// FODIMA que vale 0.5%
+  /// Sumar ese valor del iva al producto y obtener el precio final
+  final producto = 10;
+  final impuesto = 0.5;
+  final valorImpuesto = producto * (impuesto / 100);
+  final valorTotal = producto + valorImpuesto;
+  print("El producto va a costar: \$$valorTotal USD FUNCION");
+}
+
+void calcularImpuestoPosicionales(double producto, double impuesto, String? mensaje) {
+  final valorImpuesto = producto * (impuesto / 100);
+  final valorTotal = producto + valorImpuesto;
+  print("El producto va a costar: \$$valorTotal USD $mensaje");
+}
+
+
+
+// Cuando un valor es requerido -> required
+// Cuando no es requerido -> String? -> esa variable o valor puede ser null
+void calcularImpuestoNombre(
+    {required double producto, required double impuesto, String? mensaje}) {
+  final valorImpuesto = producto * (impuesto / 100);
+  final valorTotal = producto + valorImpuesto;
+  print("El producto va a costar: \$$valorTotal USD $mensaje");
+}
+
+//Función que retorna un valor
+// 1. Identificar el valor de retorno -> double
+// 2. Que argumentos debo enviarle -> double poducto e impuesto -> bool calcularIva
+// 3. Nombre de la función -> calculoImpuestoFinal
+double calculoImpuestoFinal({required double producto, required double impuesto, bool calcularIva = true}) {
+  final valorImpuesto = producto * (impuesto / 100);
+  final valorTotal = producto + valorImpuesto;
+  return valorTotal;
+}
+
+void main1() {}
+
+void ejemplo() {}
+// Función privada con _funcion
+// Función pública con funcion
+void _ejemploRepresentativo() {}
+
+
+// Funciones lambda - funciones flecha
+int suma() {
+  final suma = 3 + 5;
   return suma;
-  // Return temprano
-  // if(suma == 2) {
-  //   return 100;
-  // }
-  // if(suma == 3) {
-  //   return 10;
-  // }
-  // return suma;
 }
 
+int suma2() {
+  return 3+5;
+}
 
-// Calcular el IVA de un producto que cuesta 30 dólares y cual seríal el costo final
-// IVA es 15%
-// final producto = 30;
-// final productoIva = producto * (30/100);
-// final costo = producto + productoIva;
+int suma3() => 3 + 5;
+
+void cosaX() => calculoFodima();
+
+void cosaXY() => calculoFodima();
